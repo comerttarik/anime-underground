@@ -6,7 +6,7 @@ const IndexPage = () => {
   return (
     <main>
       <Layout pageTitle="Welcome to Anime Underground">
-      <p>Lorem ipsum</p>
+      <p>Anime Studio</p>
       <StaticImage
         alt="Een Gatsby astronaut"
         src="../images/gatsby-astronaut.png"
