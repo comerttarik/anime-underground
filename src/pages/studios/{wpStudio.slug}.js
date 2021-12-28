@@ -12,6 +12,7 @@ const StudioPage = ({data: {wpStudio: {studioFields: studio}}}) => {
   return (
     <Layout pageTitle="Studio">
     <div>
+    <h1>Studio</h1>
       <p>Name: {studio.name}</p>
       <GatsbyImage image={image} alt={studio.logo.sourceUrl} />
       <br/>
