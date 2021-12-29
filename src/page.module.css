@@ -48,7 +48,7 @@
     border: 1px solid #37ba83;
   }
 
-  /*extra*/
+  /* new */
 
 .subtitle {
   font-size: 4rem;
@@ -114,4 +114,51 @@
   .hero {
     transform: translateX(-5%);
   }
+}
+
+/* new deze is belangrijkste*/
+.artist-name {
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color: #37ba83;
+  margin: 0;
+}
+
+.artist-roles {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  margin: 0.5rem 0 1rem 0;
+}
+
+.full-name {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.artist-description {
+  margin-bottom: 2rem;
+}
+
+.artist-info {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #37ba83;
+}
+
+/* new */
+
+.mission-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 120px;
+}
+
+.mission-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  max-width: 500px;
+  margin-left: 30px;
 }

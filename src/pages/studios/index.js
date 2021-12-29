@@ -79,7 +79,7 @@ export const query = graphql`
             logo {
               localFile {
                 childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, transformOptions: {grayscale: true})
+                  gatsbyImageData(placeholder: BLURRED, transformOptions: {grayscale: false})
                 }
               }
               altText
