@@ -66,15 +66,3 @@ export const Studio = ({ studio, slug }) => {
 
 export default Studio;
 */
-
-
-
-
-
-
-
-
-
-
-
-

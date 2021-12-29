@@ -75,7 +75,7 @@
   width: 700px;
   z-index: -1;
 }
-/*
+
 .section::before {
   top: 40%;
   left: -40%;
@@ -87,11 +87,31 @@
   right: -40%;
   background-image: url("./images/blob-2.svg");
 }
-*/
 
 .studios {
   display: flex;
   justify-content: space-between;
   margin-top: 90px;
   flex-wrap: wrap;
+}
+
+/*new*/
+
+.hero {
+  width: 120vw;
+  height: 500px;
+  transform: translateX(calc((-120vw + 1080px) / 2));
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.description {
+  max-width: 600px;
+  margin: auto;
+}
+
+@media screen and (max-width: 1200px) {
+  .hero {
+    transform: translateX(-5%);
+  }
 }

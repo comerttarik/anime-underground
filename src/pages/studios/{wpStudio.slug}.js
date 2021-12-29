@@ -13,10 +13,8 @@ const StudioPage = ({data: {wpStudio: {studioFields: studio}}}) => {
     <Layout pageTitle="Studio">
     <div>
     <h1>Studio</h1>
-      <p>Name: {studio.name}</p>
       <GatsbyImage image={image} alt={studio.logo.sourceUrl} />
-      <br/>
-      <br/>
+      <p>Name: {studio.name}</p>
       <div dangerouslySetInnerHTML={{__html: studio.description}} />
       <p>Founded: {studio.founded}</p>
       <p>Founders: {studio.founders}</p>
@@ -28,8 +26,8 @@ const StudioPage = ({data: {wpStudio: {studioFields: studio}}}) => {
     </div>
     <div>
       <h1>Most successfull Anime</h1>
-      <p>Name: {studio.mostSuccessfulAnime.name}</p>
       <GatsbyImage image={imageCover} alt={studio.mostSuccessfulAnime.animeCover.altText} />
+      <p>Name: {studio.mostSuccessfulAnime.name}</p>
       <p>Episodes: {studio.mostSuccessfulAnime.episodes}</p>
       <p>Duration: {studio.mostSuccessfulAnime.duration}</p>
       <p>Aired: {studio.mostSuccessfulAnime.aired}</p>
