@@ -61,6 +61,11 @@ const Layout = ({ children }) => {
               Studios
             </Link>
           </li>
+          <li className={navLinkItem}>
+            <Link className={navLinkText} to="/contact">
+              Contact
+            </Link>
+          </li>
         </ul>
       </nav>
       <main>{children}</main>

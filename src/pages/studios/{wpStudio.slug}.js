@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { graphql } from 'gatsby'
-import Layout from '../../components/layout'
-import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import * as React from "react"
+import { graphql } from "gatsby"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import Layout from "../../components/layout"
 import {
   header,
   headerInfo,
@@ -11,18 +11,25 @@ import {
   artistRoles,
   artistDescription,
   artistInfo,
+  artistPictures,
+  artistPicture,
 } from "../../page.module.css"
 
 const StudioPage = ({
     data: 
       {wpStudio: {
         studioFields: studio,
+        genres: { nodes: genres },
       } 
     }
   }) => {
   
   const image = getImage(studio.logo.localFile)
   const imageCover = getImage(studio.mostSuccessfulAnime.animeCover.localFile)
+
+  const picture1 = getImage(studio.pictures.picture1.localFile)
+  const picture2 = getImage(studio.pictures.picture2.localFile)
+  const picture3 = getImage(studio.pictures.picture3.localFile)
 
   return (
     <Layout pageTitle="Studio">
@@ -49,7 +56,15 @@ const StudioPage = ({
       <div className={header}>
         <GatsbyImage className={headerPicture} image={imageCover} alt={studio.mostSuccessfulAnime.animeCover.altText} />
         <div className={headerInfo}>
-          {studio.mostSuccessfulAnime.name && <h3 className={artistName}>Most successfull Anime</h3>}
+            {studio.mostSuccessfulAnime.name && <h3 className={artistName}>Most successfull Anime</h3>}
+            {/*
+            <div className={artistRoles}>
+              {genres.map((genre, i) => (
+                <span key={i}>
+                  {genre.name} {i + 1 < genre.length && "- "}
+                </span>
+              ))}
+            </div>*/}
             <h1 className={fullName}>{studio.mostSuccessfulAnime.name}</h1>
             <p><span className={artistInfo}>Episodes:</span> {studio.mostSuccessfulAnime.episodes}</p>
             <p><span className={artistInfo}>Duration:</span> {studio.mostSuccessfulAnime.duration}</p>
@@ -63,6 +78,11 @@ const StudioPage = ({
         <br/>
         <br/>
         <br/>
+      <div className={artistPictures}>
+        <GatsbyImage className={artistPicture} image={picture1} alt={studio.pictures.picture1.localFile} />
+        <GatsbyImage className={artistPicture} image={picture2} alt={studio.pictures.picture2.localFile} />
+        <GatsbyImage className={artistPicture} image={picture3} alt={studio.pictures.picture3.localFile} />
+      </div>
     </Layout>
   )
 }
@@ -70,43 +90,74 @@ const StudioPage = ({
 export const query = graphql`
   query ($id: String) {
     wpStudio(id: {eq: $id}) {
-        studioFields {
-          logo {
+      studioFields {
+        logo {
+          localFile {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED)
+            }
+          }
+          sourceUrl
+        }
+        name
+        description
+        founded
+        founders
+        headquarters
+        keyPeople
+        netIncome
+        numberOfEmployees
+        website
+        mostSuccessfulAnime {
+          rating
+          producers
+          name
+          genre
+          fieldGroupName
+          episodes
+          duration
+          aired
+          animeCover {
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, width: 500, height: 500)
+              }
+            }
+            altText
+          }
+        }
+        pictures {
+          picture1 {
+            altText
             localFile {
               childImageSharp {
                 gatsbyImageData(placeholder: BLURRED)
               }
             }
-            sourceUrl
           }
-          name
-          description
-          founded
-          founders
-          headquarters
-          keyPeople
-          netIncome
-          numberOfEmployees
-          website
-          mostSuccessfulAnime {
-            rating
-            producers
-            name
-            genre
-            fieldGroupName
-            episodes
-            duration
-            aired
-            animeCover {
-              localFile {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, width: 500, height: 500)
-                }
+          picture2 {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED)
               }
-              altText
             }
           }
-        }    
+          picture3 {
+            altText
+            localFile {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED)
+              }
+            }
+          }
+        }
+      }
+      genres {
+        nodes {
+          name
+        }
+      }
     }
   }
 `
