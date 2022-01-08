@@ -6,13 +6,13 @@ import {
   header,
   headerInfo,
   headerPicture,
-  artistName,
+  studioName,
   fullName,
-  artistRoles,
-  artistDescription,
-  artistInfo,
-  artistPictures,
-  artistPicture,
+  studioRoles,
+  studioDescription,
+  studioInfo,
+  studioPictures,
+  studioPicture,
 } from "../../page.module.css"
 
 const StudioPage = ({
@@ -35,16 +35,16 @@ const StudioPage = ({
     <Layout pageTitle="Studio">
       <div className={header}>
         <div className={headerInfo}>
-          {studio.name && <h3 className={artistName}>Studio</h3>}
+          {studio.name && <h3 className={studioName}>Studio</h3>}
           <h1 className={fullName}>{studio.name}</h1>
-          <div className={artistDescription} dangerouslySetInnerHTML={{__html: studio.description}} />
-          <p><span className={artistInfo}>Founded:</span> {studio.founded}</p>
-          <p><span className={artistInfo}>Founders:</span> {studio.founders}</p>
-          <p><span className={artistInfo}>Headquarters:</span> {studio.headquarters}</p>
-          <p><span className={artistInfo}>key people:</span> {studio.keyPeople}</p>
-          <p><span className={artistInfo}>Number of employees:</span> {studio.numberOfEmployees}</p>
-          <p><span className={artistInfo}>Net income:</span> {studio.netIncome}</p>
-          <p><span className={artistInfo}>Website:</span> <a href={studio.website}>{studio.website}</a></p>
+          <div className={studioDescription} dangerouslySetInnerHTML={{__html: studio.description}} />
+          <p><span className={studioInfo}>Founded:</span> {studio.founded}</p>
+          <p><span className={studioInfo}>Founders:</span> {studio.founders}</p>
+          <p><span className={studioInfo}>Headquarters:</span> {studio.headquarters}</p>
+          <p><span className={studioInfo}>key people:</span> {studio.keyPeople}</p>
+          <p><span className={studioInfo}>Number of employees:</span> {studio.numberOfEmployees}</p>
+          <p><span className={studioInfo}>Net income:</span> {studio.netIncome}</p>
+          <p><span className={studioInfo}>Website:</span> <a href={studio.website}>{studio.website}</a></p>
         </div>
         <GatsbyImage className={headerPicture} image={image} alt={studio.logo.sourceUrl} />
       </div>
@@ -56,9 +56,9 @@ const StudioPage = ({
       <div className={header}>
         <GatsbyImage className={headerPicture} image={imageCover} alt={studio.mostSuccessfulAnime.animeCover.altText} />
         <div className={headerInfo}>
-            {studio.mostSuccessfulAnime.name && <h3 className={artistName}>Most successfull Anime</h3>}
+            {studio.mostSuccessfulAnime.name && <h3 className={studioName}>Most successfull Anime</h3>}
             {/*
-            <div className={artistRoles}>
+            <div className={studioRoles}>
               {genres.map((genre, i) => (
                 <span key={i}>
                   {genre.name} {i + 1 < genre.length && "- "}
@@ -66,22 +66,22 @@ const StudioPage = ({
               ))}
             </div>*/}
             <h1 className={fullName}>{studio.mostSuccessfulAnime.name}</h1>
-            <p><span className={artistInfo}>Episodes:</span> {studio.mostSuccessfulAnime.episodes}</p>
-            <p><span className={artistInfo}>Duration:</span> {studio.mostSuccessfulAnime.duration}</p>
-            <p><span className={artistInfo}>Aired:</span> {studio.mostSuccessfulAnime.aired}</p>
-            <p><span className={artistInfo}>Producers:</span> {studio.mostSuccessfulAnime.producers}</p>
-            <p><span className={artistInfo}>Genre:</span> {studio.mostSuccessfulAnime.genre}</p>
-            <p><span className={artistInfo}>Rating:</span> {studio.mostSuccessfulAnime.rating}</p>
+            <p><span className={studioInfo}>Episodes:</span> {studio.mostSuccessfulAnime.episodes}</p>
+            <p><span className={studioInfo}>Duration:</span> {studio.mostSuccessfulAnime.duration}</p>
+            <p><span className={studioInfo}>Aired:</span> {studio.mostSuccessfulAnime.aired}</p>
+            <p><span className={studioInfo}>Producers:</span> {studio.mostSuccessfulAnime.producers}</p>
+            <p><span className={studioInfo}>Genre:</span> {studio.mostSuccessfulAnime.genre}</p>
+            <p><span className={studioInfo}>Rating:</span> {studio.mostSuccessfulAnime.rating}</p>
         </div>
       </div>
         <br/>
         <br/>
         <br/>
         <br/>
-      <div className={artistPictures}>
-        <GatsbyImage className={artistPicture} image={picture1} alt={studio.pictures.picture1.localFile} />
-        <GatsbyImage className={artistPicture} image={picture2} alt={studio.pictures.picture2.localFile} />
-        <GatsbyImage className={artistPicture} image={picture3} alt={studio.pictures.picture3.localFile} />
+      <div className={studioPictures}>
+        <GatsbyImage className={studioPicture} image={picture1} alt={studio.pictures.picture1.localFile} />
+        <GatsbyImage className={studioPicture} image={picture2} alt={studio.pictures.picture2.localFile} />
+        <GatsbyImage className={studioPicture} image={picture3} alt={studio.pictures.picture3.localFile} />
       </div>
     </Layout>
   )
