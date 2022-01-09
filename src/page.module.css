@@ -18,10 +18,17 @@
   height: 40vw;
   max-width: 500px;
   max-height: 500px;
+  /*cool shadow*/
+  box-shadow:
+  0 0 20px 10px #fff,
+  0 0 20px 10px #f0f,
+  0 0 90px 10px #0ff;
 }  
 .header-title {
-  font-size: 6rem;
-  line-height: 5rem;
+  /*font-size: 6rem;
+  line-height: 5rem;*/
+  font-size: 3rem;
+  line-height: 4rem;
   letter-spacing: -0.2rem;
   text-transform: uppercase;
   margin: 0;
@@ -29,7 +36,7 @@
 }  
 .CTA {
   display: block;
-  background-color: #37ba83;
+  background-color: #4056FF;
   color: white;
   border: 1px solid #000;
   border-radius: 4px;
@@ -40,9 +47,9 @@
   transition: all 0.2s ease;
 }  
 .CTA:hover {
-  color: #37ba83;
+  color: #4056FF ;
   background-color: #000;
-  border: 1px solid #37ba83;
+  border: 1px solid #4056FF;
 }
 
 /*HOMEPAGE SECOND SECTION*/
@@ -96,7 +103,7 @@
   margin-bottom: 1rem;
 }
 .link {
-  color: #37ba83;
+  color: #4056FF;
 }
 .socials {
   display: flex;
@@ -140,10 +147,10 @@
 /*STUDIOS PAGE*/
 .hero {
   width: 120vw;
-  height: 500px;
+  height: 600px;
   transform: translateX(calc((-120vw + 1080px) / 2));
-  border-bottom-left-radius: 50%;
-  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 600px;
+  border-bottom-right-radius: 600px;
 }
 .description {
   max-width: 600px;
@@ -159,7 +166,7 @@
 .studio-name {
   font-size: 1.7rem;
   text-transform: uppercase;
-  color: #37ba83;
+  color: #4056FF;
   margin: 0;
 }
 .studio-roles {
@@ -178,7 +185,7 @@
 .studio-info {
   font-weight: 700;
   text-transform: uppercase;
-  color: #37ba83;
+  color: #4056FF;
 }
 
 /*FOR EVERY STUDIO PAGE 3 PICTURES*/

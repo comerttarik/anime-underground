@@ -72,7 +72,7 @@ query {
           altText
           localFile {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, width: 900, height: 500)
+              gatsbyImageData(placeholder: BLURRED, width: 500, height: 500)
             }
           }
         }
